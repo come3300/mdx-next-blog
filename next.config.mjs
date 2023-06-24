@@ -3,6 +3,7 @@ import nextMDX from "@next/mdx";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import rehypePrism from "@mapbox/rehype-prism";
 
 const withMDX = nextMDX({
   extensions: /\.mdx?$/,
@@ -11,7 +12,7 @@ const withMDX = nextMDX({
     // as the package is ESM only
     // https://github.com/remarkjs/remark-gfm#install
     remarkPlugins: [remarkGfm, remarkMath],
-    rehypePlugins: [rehypeKatex],
+    rehypePlugins: [rehypeKatex, rehypePrism],
     // If you use `MDXProvider`, uncomment the following line.
     // providerImportSource: "@mdx-js/react",
   },
