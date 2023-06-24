@@ -6,6 +6,7 @@ import rehypeKatex from "rehype-katex";
 import rehypePrism from "@mapbox/rehype-prism";
 import rehypeSlug from "rehype-slug";
 import remarkToc from "remark-toc";
+import remarkBreaks from "remark-breaks";
 
 const withMDX = nextMDX({
   extensions: /\.mdx?$/,
@@ -17,6 +18,7 @@ const withMDX = nextMDX({
       remarkGfm,
       remarkMath,
       [remarkToc, { maxDepth: 3, heading: "目次" }],
+      remarkBreaks,
     ],
     rehypePlugins: [rehypeKatex, rehypePrism, rehypeSlug],
     // If you use `MDXProvider`, uncomment the following line.
